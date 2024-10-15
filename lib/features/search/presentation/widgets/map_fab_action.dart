@@ -24,38 +24,49 @@ class _MapFabActionState extends State<MapFabAction> {
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          InkWell(
-              onTap: () {
-                setState(() {
-                  _tipVisible = !_tipVisible;
-                });
-              },
-              child: _tipVisible
-                  ? FadeInExpandWidget(
-                      child: Container(
-                        padding:
-                            const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-                        height: 200,
-                        width: 200,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: const Color(0xffFBF5EB)),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            _innerRows(asset: AllImages().walletIcon, title: "Cosy areas",),
-                            _innerRows(asset: AllImages().walletIcon, title: "Price", isSelected: true),
-                            _innerRows(asset: AllImages().walletIcon, title: "Infrastructure", isSelected: true),
-                            _innerRows(asset: AllImages().walletIcon, title: "Without any layer", isSelected: true),
-                          ],
+          Visibility(
+            visible: _tipVisible,
+              child: InkWell(
+            onTap: () {
+              setState(() {
+                _tipVisible = !_tipVisible;
+              });
+            },
+            child: FadeInExpandWidget(
+              child: Container(
+                padding:
+                const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                height: 200,
+                width: 200,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    color: const Color(0xffFBF5EB)),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    _innerRows(asset: AllImages().walletIcon, title: "Cosy areas",),
+                    _innerRows(asset: AllImages().walletIcon, title: "Price", isSelected: true),
+                    _innerRows(asset: AllImages().walletIcon, title: "Infrastructure", isSelected: true),
+                    _innerRows(asset: AllImages().walletIcon, title: "Without any layer", isSelected: true),
+                  ],
+                ),
+              ),
+            ),
+          )),
+          Visibility(
+            visible:!_tipVisible,
+            child: InkWell(
+                onTap: () {
+                  setState(() {
+                    _tipVisible = !_tipVisible;
+                  });
+                },
+                child:  FadeInExpandWidget(
+                        child: MapCircleWidget(
+                          asset: AllImages().stackIcon,
                         ),
-                      ),
-                    )
-                  : FadeInExpandWidget(
-                      child: MapCircleWidget(
-                        asset: AllImages().stackIcon,
-                      ),
-                    )),
+                      )),
+          ),
           SizedBox(
             height: 10.h,
           ),
