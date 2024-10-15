@@ -1,0 +1,78 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug app in production",
+      "request": "launch",
+      "flutterMode": "debug",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": [
+        "--flavor",
+        "production",
+        "--dart-define=FLUTTER_APP_FLAVOR=production"
+      ]
+    },
+    {
+      "name": "debug app in dev ",
+      "request": "launch",
+      "flutterMode": "debug",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": ["--flavor", "dev", "--dart-define=FLUTTER_APP_FLAVOR=dev"]
+    },
+    {
+      "name": "Build release app in production ",
+      "request": "launch",
+      "flutterMode": "release",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": [
+        "--flavor",
+        "production",
+        "--dart-define=FLUTTER_APP_FLAVOR=production"
+      ]
+    },
+    {
+      "name": "build release app in dev",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "flutterMode": "release",
+      "args": ["--flavor", "dev", "--dart-define=FLUTTER_APP_FLAVOR=dev"]
+    },
+
+    {
+      "name": "launch in debug mode",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "flutterMode": "debug"
+    },
+    {
+      "name": "launch in release mode",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "flutterMode": "release"
+    },
+
+    {
+      "name": "Launch in profile mode",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "flutterMode": "profile"
+    },
+
+    {
+      "name": "Unit Tests",
+      "type": "dart",
+      "request": "launch",
+      "program": "test/"
+    }
+  ]
+}
