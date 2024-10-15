@@ -203,6 +203,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
                     ),
                     Gap(10.h),
                     Row(
+                      mainAxisAlignment:MainAxisAlignment.spaceBetween ,
                       children: [
                         HomeCardWidget(
                           height: 368,
@@ -210,20 +211,20 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
                           image: AllImages().bathRoomImage,
                            title: "Trefoleva St., 43",
                         ),
-                        Gap(10.w),
+                        // Gap(10.w),
                         Column(
                           children: [
                             HomeCardWidget(
 
                               image: AllImages().kitchenImage,
                                title: "Sedolva., 11",
-                              width: 170,
+                              width: 178,
                             ),
                             Gap(10.h),
                             HomeCardWidget(
                               image: AllImages().bathRoomImage,
                                title: "Gabinna St., 22",
-                              width: 173,
+                              width: 178,
                             ),
                           ],
                         )

@@ -74,8 +74,8 @@ class _HomeCardWidgetState extends State<HomeCardWidget> {
                               shadowColor: Colors.black54,
                               borderRadius: BorderRadius.circular(100.0), //
                               child: Container(
-                                height: 35,
-                                width: 35,
+                                height: 35.h,
+                                width: 35.w,
                                 decoration:
                                     BoxDecoration(borderRadius: BorderRadius.circular(100), color: Colors.white),
                                 child: const Align(alignment: Alignment.center, child: Icon(Icons.chevron_right)),
